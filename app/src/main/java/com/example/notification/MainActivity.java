@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void createChannel(){
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             String channelId="MyChannel";
-            String channelName="BSSE";
+            String channelName="Lumber 1 app ka notifcations";
             String channelDes="LAB9 Class";
             int importance= NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel=new NotificationChannel(channelId,channelName,importance);
