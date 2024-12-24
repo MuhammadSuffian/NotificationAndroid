@@ -1,5 +1,8 @@
 package com.example.notification;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -27,9 +30,18 @@ public class MainActivity extends AppCompatActivity {
                 binding.etInputMsg.requestFocus();
                 Snackbar.make(binding.getRoot(),"Please enter message",Snackbar.LENGTH_SHORT).show();
             }
-            else{
-
-            }
         });
+    }
+    public void createChannel(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            String channelId="MyChannel";
+            String channelName="BSSE";
+            String channelDes="LAB9 Class";
+            int importance= NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel=new NotificationChannel(channelId,channelName,importance);
+            channel.setDescription(channelDes);
+            NotificationManager notificationManager=getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
