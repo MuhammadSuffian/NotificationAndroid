@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.etInputMsg.setError("Please enter message");
                 binding.etInputMsg.requestFocus();
                 Snackbar.make(binding.getRoot(),"Please enter message",Snackbar.LENGTH_SHORT).show();
+                return;
             }
         });
     }
